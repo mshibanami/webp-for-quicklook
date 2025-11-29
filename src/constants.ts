@@ -1,0 +1,37 @@
+export const SUPPORTED_LOCALES = [
+  // "bg",
+  // "cs",
+  // "da",
+  // "de",
+  // "el",
+  // "es",
+  "en",
+  // "et",
+  // "fi",
+  // "fr",
+  // "hu",
+  // "id",
+  // "it",
+  // "ja",
+  // "ko",
+  // "lt",
+  // "lv",
+  // "nl",
+  // "pl",
+  // "pt-br",
+  // "pt-pt",
+  // "ro",
+  // "ru",
+  // "sk",
+  // "sl",
+  // "sv",
+  // "tr",
+  // "uk",
+  // "zh-hans",
+] as const;
+
+export type SupportedLocale = (typeof SUPPORTED_LOCALES)[number];
+
+export function isSupportedLocale(locale: string): locale is SupportedLocale {
+  return (SUPPORTED_LOCALES as readonly string[]).includes(locale);
+}

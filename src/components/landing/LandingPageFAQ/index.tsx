@@ -1,0 +1,162 @@
+import type { ReactNode } from 'react';
+import { useState } from 'react';
+import clsx from 'clsx';
+import Heading from '@theme/Heading';
+import Translate, { translate } from '@docusaurus/Translate';
+import Link from '@docusaurus/Link';
+import styles from './styles.module.scss';
+
+interface FAQItem {
+    question: string;
+    answer: ReactNode;
+}
+
+const faqItems: FAQItem[] = [
+    {
+        question: translate({
+            id: 'landingPageFAQ.isThisRealProblem.question',
+            message: 'Is this a real problem? I have never noticed the slow preview before.',
+            description: 'FAQ question about whether the problem addressed by the app is real'
+        }),
+        answer: (
+            <div>
+                <p>
+                    <Translate
+                        id="landingPageFAQ.isThisRealProblem.answer"
+                        description="FAQ answer about whether the problem addressed by the app is real"
+                    >
+                        {'Yes, it is! While Quick Look does support animated WebP natively, it does not perfectly handle animated WebP files. You can get a sample animated WebP file to test this yourself:'}
+                    </Translate>
+                    {" "}
+                    <Link to="/img/sample_60fps.webp" target="_blank" rel="noreferrer">
+                        <b>
+                            <Translate
+                                id="landingPageFAQ.isThisRealProblem.sampleLink"
+                                description="FAQ download link to sample 60FPS WebP file"
+                            >
+                                Sample 60FPS WebP File
+                            </Translate>
+                        </b>
+                    </Link>
+                </p>
+                <p>
+                    We suggest using a Chromium-based browser (e.g., Google Chrome, Microsoft Edge) to check the original speed since their built-in WebP renderers works great.
+                </p>
+            </div>
+        )
+    },
+    {
+        question: translate({
+            id: 'landingPageFAQ.pricing.question',
+            message: 'What is the pricing model for this app?',
+            description: 'FAQ question about pricing model'
+        }),
+        answer: (
+            <div>
+                <p>
+                    <Translate
+                        id="landingPageFAQ.pricing.answer"
+                        description="FAQ answer about pricing model"
+                    >
+                        {'Free + one-time purchase. It\'s free to download from the Mac App Store, and you can view up to 10 previews per hour. This allows you to try the app and make sure it meets your needs. Once you unlock the full version with a one-time in-app purchase (priced about the cost of a cup of coffee ☕️), you can enjoy unlimited previews.'}
+                    </Translate>
+                </p>
+            </div>
+        )
+    },
+    {
+        question: translate({
+            id: 'landingPageFAQ.whyNotReport.question',
+            message: 'Why don\'t you report this issue to Apple?',
+            description: 'FAQ question about why the issue is not reported to Apple'
+        }),
+        answer: (
+            <div>
+                <p>
+                    <Translate
+                        id="landingPageFAQ.whyNotReport.answer"
+                        description="FAQ answer about why the issue is not reported to Apple"
+                    >
+                        {'We did report this to Apple in 2024, and they actually improved it! (It was actually much worse before macOS Tahoe.) However, even with the improvements, it does not play high-frame-rate WebP files smoothly. So we created this app for users who need it.'}
+                    </Translate>
+                </p>
+            </div>
+        )
+    },
+];
+
+interface FAQAccordionItemProps {
+    item: FAQItem;
+    isOpen: boolean;
+    onClick: () => void;
+}
+
+function FAQAccordionItem({ item, isOpen, onClick }: FAQAccordionItemProps): ReactNode {
+    return (
+        <div className={clsx(styles.faqItem, { [styles.open]: isOpen })}>
+            <button
+                className={styles.faqQuestion}
+                onClick={onClick}
+                aria-expanded={isOpen}
+            >
+                <span className={styles.questionText}>{item.question}</span>
+                <svg
+                    className={styles.icon}
+                    aria-hidden="true"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M6 9L12 15L18 9"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                    />
+                </svg>
+            </button>
+            <div className={clsx(styles.faqAnswer, { [styles.show]: isOpen })}>
+                <div className={styles.answerWrapper}>
+                    <div className={styles.answerContent}>
+                        {item.answer}
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+export default function LandingPageFAQ(): ReactNode {
+    const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+    const toggleItem = (index: number) => {
+        setOpenIndex(openIndex === index ? null : index);
+    };
+
+    return (
+        <div className={clsx('container', styles.faqSection)}>
+            <div className={styles.faqHeader}>
+                <Heading as="h2">
+                    <Translate
+                        id="landingPageFAQ.title"
+                        description="FAQ section title">
+                        Frequently Asked Questions
+                    </Translate>
+                </Heading>
+            </div>
+            <div className={styles.faqContainer}>
+                {faqItems.map((item, index) => (
+                    <FAQAccordionItem
+                        key={index}
+                        item={item}
+                        isOpen={openIndex === index}
+                        onClick={() => toggleItem(index)}
+                    />
+                ))}
+            </div>
+        </div>
+    );
+}
