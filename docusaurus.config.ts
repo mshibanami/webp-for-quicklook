@@ -121,10 +121,6 @@ const config: Config = {
               to: '/introduction',
             },
             {
-              label: 'How to Create Rules',
-              to: '/category/how-to-create-rules',
-            },
-            {
               label: 'Release Notes',
               to: '/release-notes',
             },
