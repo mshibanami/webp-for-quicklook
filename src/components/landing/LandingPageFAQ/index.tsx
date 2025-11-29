@@ -47,6 +47,25 @@ const faqItems: FAQItem[] = [
     },
     {
         question: translate({
+            id: 'landingPageFAQ.whyNotReport.question',
+            message: 'Why don\'t you report this issue to Apple?',
+            description: 'FAQ question about why the issue is not reported to Apple'
+        }),
+        answer: (
+            <div>
+                <p>
+                    <Translate
+                        id="landingPageFAQ.whyNotReport.answer"
+                        description="FAQ answer about why the issue is not reported to Apple"
+                    >
+                        {'We reported this to Apple in 2024, and they did improve it! (It was actually much worse before macOS Tahoe.) However, even with these improvements, high-frame-rate WebP files still don’t play smoothly. It also remains a major issue for users on older versions of macOS. That’s why we created this app for those who need it.'}
+                    </Translate>
+                </p>
+            </div>
+        )
+    },
+    {
+        question: translate({
             id: 'landingPageFAQ.pricing.question',
             message: 'What is the pricing model for this app?',
             description: 'FAQ question about pricing model'
@@ -59,25 +78,6 @@ const faqItems: FAQItem[] = [
                         description="FAQ answer about pricing model"
                     >
                         {'Free + one-time purchase. It\'s free to download from the Mac App Store, and you can view up to 10 previews per hour. This allows you to try the app and make sure it meets your needs. Once you unlock the full version with a one-time in-app purchase (priced about the cost of a cup of coffee ☕️), you can enjoy unlimited previews.'}
-                    </Translate>
-                </p>
-            </div>
-        )
-    },
-    {
-        question: translate({
-            id: 'landingPageFAQ.whyNotReport.question',
-            message: 'Why don\'t you report this issue to Apple?',
-            description: 'FAQ question about why the issue is not reported to Apple'
-        }),
-        answer: (
-            <div>
-                <p>
-                    <Translate
-                        id="landingPageFAQ.whyNotReport.answer"
-                        description="FAQ answer about why the issue is not reported to Apple"
-                    >
-                        {'We did report this to Apple in 2024, and they actually improved it! (It was actually much worse before macOS Tahoe.) However, even with the improvements, it does not play high-frame-rate WebP files smoothly. So we created this app for users who need it.'}
                     </Translate>
                 </p>
             </div>

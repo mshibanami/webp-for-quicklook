@@ -18,38 +18,11 @@ function LandingPageHero() {
     return (
         <header className={clsx('hero', styles.heroBanner)}>
             <div className={clsx("container", styles.heroContainer)}>
-                <Image
-                    src={useBaseUrl('/img/logo.png')}
-                    alt="WebP for Quick Look Logo"
-                    width={100}
-                    height={100}
-                    margin='80px 0' />
-
-                <Heading as="h1" className="hero__title">
+                <Heading as="h1" className="hero__title margin-top--lg">
                     {siteConfig.tagline}
                 </Heading>
-                <p className="hero__subtitle margin-bottom--lg">
-                    <Translate
-                        id="landingPage.heroSubtitle"
-                        description="Landing page hero subtitle"
-                        values={{ appName: <b>WebP for Quick Look</b> }}
-                    >
-                        {'{appName} is a Quick Look extension that enables smooth previews for animated WebP files.'}
-                    </Translate>
-                </p>
 
-                <div className="margin-bottom--xl">
-                    <StoreBadges />
-                </div>
-
-                <Heading as='h3'>
-                    <Translate
-                        id="landingPage.demoVideoPrompt"
-                        description="Landing page demo video prompt">
-                        👇️ macOS Default vs. WebP for Quick Look
-                    </Translate>
-                </Heading>
-                <div className={styles.heroVideoContainer}>
+                <div className={clsx('margin-bottom--lg', styles.heroVideoContainer)}>
                     <video
                         className={styles.heroVideo}
                         src={useBaseUrl('/videos/landing-demo.mov')}
@@ -65,8 +38,20 @@ function LandingPageHero() {
                             download the video
                         </a>.
                     </video>
-                    <p>These play the same WebP file.</p>
                 </div>
+
+                <div className="margin-bottom--lg">
+                    <StoreBadges />
+                </div>
+                <p className="hero__subtitle margin-bottom--lg">
+                    <Translate
+                        id="landingPage.heroSubtitle"
+                        description="Landing page hero subtitle"
+                        values={{ appName: <b>WebP for Quick Look</b> }}
+                    >
+                        {'{appName} is a Quick Look extension that enables smooth previews for animated WebP files.'}
+                    </Translate>
+                </p>
             </div>
         </header>
     );
@@ -141,8 +126,7 @@ export default function Home(): ReactNode {
                     })}>
                         <LandingPageFAQ />
                     </div>
-
-                    <div className="container margin-vert--xl text--center">
+                    <div className="container margin-bottom--xl text--center">
                         <StoreBadges />
                     </div>
                 </main>
