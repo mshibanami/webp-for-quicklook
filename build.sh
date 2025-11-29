@@ -8,5 +8,3 @@ rm -rf build
 
 pnpm install
 pnpm run build
-
-cp -R library build/

@@ -10,10 +10,5 @@ Download the app and the extension from the following links:
 
 In addition, we provide these on GitHub:
 
-- [Library Contents](./library): This contains the contents shown in the Library section in the app.
 - [Issues](https://github.com/mshibanami/webp-for-quicklook/issues): Report any bugs, request new features, and more.
 - [Discussions](https://github.com/mshibanami/webp-for-quicklook/discussions): Ask any questions and get help from the developer or other users.
-
-## Contributing
-
-See [the contributing guide](CONTRIBUTING.md) for detailed instructions on how to get started with our project.
