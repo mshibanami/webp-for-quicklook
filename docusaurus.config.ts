@@ -211,6 +211,6 @@ export default config;
 function translatedTagline(locale): string {
   switch (locale) {
     default:
-      return 'Fixes Native Glitches';
+      return 'Animated WebP, no speed cap.';
   }
 }

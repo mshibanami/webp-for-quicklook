@@ -6,7 +6,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import LandingPageBackground from '@site/src/components/landing/LandingPageBackground';
-import Image from "@site/src/components/Image";
 import styles from './index.module.scss';
 import Translate, { translate } from '@docusaurus/Translate';
 import Head from '@docusaurus/Head';
@@ -93,18 +92,14 @@ export default function Home(): ReactNode {
     const { siteConfig } = useDocusaurusContext();
     const headerAnimation = useScrollAnimation();
     const useFAQAnimation = useScrollAnimation();
-    const titleDescription = translate({
-        id: "landingPage.metadataTitleDescription",
-        description: "Short description of the app for the landing page metadata",
-        message: "Fixes Native Glitches"
-    })
+    const titleDescription = siteConfig.tagline;
     const appName = siteConfig.title;
     const title = `${appName} – ${titleDescription}`;
     const description = translate(
         {
             id: "landingPage.heroSubtitle",
             description: "Landing page hero subtitle",
-            message: '{appName} fixes native glitches on macOS.'
+            message: '{appName} plays animated WebP files at real speed.',
         },
         { appName }
     );
