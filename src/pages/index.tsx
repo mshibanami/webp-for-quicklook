@@ -11,16 +11,13 @@ import Translate, { translate } from '@docusaurus/Translate';
 import Head from '@docusaurus/Head';
 import LandingPageFAQ from '../components/landing/LandingPageFAQ';
 import StoreBadges from '../components/StoreBadges';
+import LandingMotivation from '../components/landing/LandingMotivation';
 
 function LandingPageHero() {
     const { siteConfig } = useDocusaurusContext();
     return (
         <header className={clsx('hero', styles.heroBanner)}>
             <div className={clsx("container", styles.heroContainer)}>
-                <Heading as="h1" className="hero__title margin-top--lg">
-                    {siteConfig.tagline}
-                </Heading>
-
                 <div className={clsx('margin-bottom--lg', styles.heroVideoContainer)}>
                     <video
                         className={styles.heroVideo}
@@ -91,6 +88,7 @@ function useScrollAnimation() {
 export default function Home(): ReactNode {
     const { siteConfig } = useDocusaurusContext();
     const headerAnimation = useScrollAnimation();
+    const motivationAnimation = useScrollAnimation();
     const useFAQAnimation = useScrollAnimation();
     const titleDescription = siteConfig.tagline;
     const appName = siteConfig.title;
@@ -116,6 +114,12 @@ export default function Home(): ReactNode {
                     })}>
                         <LandingPageHero />
                     </div>
+                    <div ref={motivationAnimation.ref} className={clsx(styles.animatedSection, {
+                        [styles.visible]: motivationAnimation.isVisible
+                    })}>
+                        <LandingMotivation />
+                    </div>
+
                     <div ref={useFAQAnimation.ref} className={clsx(styles.animatedSection, {
                         [styles.visible]: useFAQAnimation.isVisible
                     })}>

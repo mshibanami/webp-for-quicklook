@@ -14,39 +14,6 @@ interface FAQItem {
 const faqItems: FAQItem[] = [
     {
         question: translate({
-            id: 'landingPageFAQ.isThisRealProblem.question',
-            message: 'Is this a real problem? I have never noticed the slow preview before.',
-            description: 'FAQ question about whether the problem addressed by the app is real'
-        }),
-        answer: (
-            <div>
-                <p>
-                    <Translate
-                        id="landingPageFAQ.isThisRealProblem.answer"
-                        description="FAQ answer about whether the problem addressed by the app is real"
-                    >
-                        {'Yes, it is! While Quick Look does support animated WebP natively, it does not perfectly handle animated WebP files. You can get a sample animated WebP file to test this yourself:'}
-                    </Translate>
-                    {" "}
-                    <Link to="/img/sample_60fps.webp" target="_blank" rel="noreferrer">
-                        <b>
-                            <Translate
-                                id="landingPageFAQ.isThisRealProblem.sampleLink"
-                                description="FAQ download link to sample 60FPS WebP file"
-                            >
-                                Sample 60FPS WebP File
-                            </Translate>
-                        </b>
-                    </Link>
-                </p>
-                <p>
-                    We suggest using a Chromium-based browser (e.g., Google Chrome, Microsoft Edge) to check the original speed since their built-in WebP renderers works great.
-                </p>
-            </div>
-        )
-    },
-    {
-        question: translate({
             id: 'landingPageFAQ.whyNotReport.question',
             message: 'Why don\'t you report this issue to Apple?',
             description: 'FAQ question about why the issue is not reported to Apple'
@@ -58,7 +25,7 @@ const faqItems: FAQItem[] = [
                         id="landingPageFAQ.whyNotReport.answer"
                         description="FAQ answer about why the issue is not reported to Apple"
                     >
-                        {'We reported this to Apple in 2024, and they did improve it! (It was actually much worse before macOS Tahoe.) However, even with these improvements, high-frame-rate WebP files still don’t play smoothly. It also remains a major issue for users on older versions of macOS. That’s why we created this app for those who need it.'}
+                        {'We reported this to Apple in 2024, and they did improve it! (It was actually much worse before macOS Tahoe.) However, even with those improvements, high-frame-rate WebP files are still capped as shown in the comparison video. In addition, it also remains a major problem for users on older macOS versions. That’s why we created this app for people who need it.'}
                     </Translate>
                 </p>
             </div>
@@ -67,7 +34,7 @@ const faqItems: FAQItem[] = [
     {
         question: translate({
             id: 'landingPageFAQ.pricing.question',
-            message: 'What is the pricing model for this app?',
+            message: 'What is the pricing model?',
             description: 'FAQ question about pricing model'
         }),
         answer: (
@@ -77,7 +44,7 @@ const faqItems: FAQItem[] = [
                         id="landingPageFAQ.pricing.answer"
                         description="FAQ answer about pricing model"
                     >
-                        {'Free + one-time purchase. It\'s free to download from the Mac App Store, and you can preview unlimited static WebP files and up to 10 animated WebP files per hour. This allows you to try the app and make sure it meets your needs. Once you unlock the full version with a one-time in-app purchase (priced about the cost of a cup of coffee ☕️), you can enjoy unlimited previews.'}
+                        {"Free + one-time purchase. It's free to download from the Mac App Store, and you can preview an unlimited number of static WebP files, as well as up to 10 animated WebP files per hour. This allows you to try the app and make sure it meets your needs. Once you unlock the full version with a one-time in-app purchase (priced about the cost of a cup of coffee ☕️), you can enjoy unlimited previews."}
                     </Translate>
                 </p>
             </div>
