@@ -77,7 +77,7 @@ const faqItems: FAQItem[] = [
                         id="landingPageFAQ.pricing.answer"
                         description="FAQ answer about pricing model"
                     >
-                        {'Free + one-time purchase. It\'s free to download from the Mac App Store, and you can view up to 10 previews per hour. This allows you to try the app and make sure it meets your needs. Once you unlock the full version with a one-time in-app purchase (priced about the cost of a cup of coffee ☕️), you can enjoy unlimited previews.'}
+                        {'Free + one-time purchase. It\'s free to download from the Mac App Store, and you can preview unlimited static WebP files and up to 10 animated WebP files per hour. This allows you to try the app and make sure it meets your needs. Once you unlock the full version with a one-time in-app purchase (priced about the cost of a cup of coffee ☕️), you can enjoy unlimited previews.'}
                     </Translate>
                 </p>
             </div>
