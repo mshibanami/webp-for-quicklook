@@ -17,7 +17,7 @@ export default function LandingMotivation() {
                     <Translate
                         id="landingPage.motivationText"
                         description="Motivation section text">
-                        While Quick Look does support animated WebP natively, it may not play animated WebP files smoothly. For example, 60FPS animated WebP files may be played at ~25FPS. Download the following WebP file to test it on your Mac:
+                        While Quick Look does support animated WebP natively, it may not play animated WebP files smoothly. For example, 60FPS animated WebP files may be played at ~20FPS. Download the following WebP file to test it on your Mac:
                     </Translate>
                 </p>
                 <ul>
