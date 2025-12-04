@@ -108,7 +108,7 @@ export default function LandingPageFAQ(): ReactNode {
     };
 
     return (
-        <div className={clsx('container', styles.faqSection)}>
+        <div className='sectionContainer'>
             <div className={styles.faqHeader}>
                 <Heading as="h2">
                     <MarkdownI18n
@@ -119,16 +119,14 @@ export default function LandingPageFAQ(): ReactNode {
                     </MarkdownI18n>
                 </Heading>
             </div>
-            <div className={styles.faqContainer}>
-                {faqItems.map((item, index) => (
-                    <FAQAccordionItem
-                        key={index}
-                        item={item}
-                        isOpen={openIndex === index}
-                        onClick={() => toggleItem(index)}
-                    />
-                ))}
-            </div>
+            {faqItems.map((item, index) => (
+                <FAQAccordionItem
+                    key={index}
+                    item={item}
+                    isOpen={openIndex === index}
+                    onClick={() => toggleItem(index)}
+                />
+            ))}
         </div>
     );
 }
