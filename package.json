@@ -16,14 +16,14 @@
     "check-generated-json-translations": "bash scripts/check-generated-json-translations.sh"
   },
   "dependencies": {
-    "@ai-sdk/google": "^2.0.23",
+    "@ai-sdk/google": "^2.0.44",
     "@docusaurus/core": "^3.9.2",
     "@docusaurus/preset-classic": "^3.9.2",
     "@mdx-js/react": "^3.1.1",
-    "@react-three/fiber": "^9.4.0",
+    "@react-three/fiber": "^9.4.2",
     "@types/three": "^0.180.0",
-    "ai": "^5.0.76",
-    "bowser": "^2.12.1",
+    "ai": "^5.0.106",
+    "bowser": "^2.13.1",
     "clsx": "^2.1.1",
     "docusaurus-plugin-image-zoom": "^3.0.1",
     "docusaurus-plugin-sass": "^0.2.6",
@@ -32,11 +32,11 @@
     "glob-parent": "^6.0.2",
     "prism-react-renderer": "^2.4.1",
     "raw-loader": "^4.0.2",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
     "react-markdown": "^8.0.7",
     "remark-github-admonitions-to-directives": "^2.1.0",
-    "sass": "^1.93.2",
+    "sass": "^1.94.2",
     "three": "^0.180.0"
   },
   "devDependencies": {
@@ -52,7 +52,7 @@
     "cmd-ts": "^0.14.3",
     "husky": "^9.1.7",
     "remark-cjk-friendly": "^1.2.3",
-    "tsx": "^4.20.6",
+    "tsx": "^4.21.0",
     "typescript": "~5.9.3"
   },
   "browserslist": {
