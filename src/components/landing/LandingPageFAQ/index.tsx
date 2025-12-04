@@ -15,6 +15,7 @@ const faqItems: FAQItem[] = [
         question: (
             <MarkdownI18n
                 id="landingPageFAQ.whyNotReport.question.markdown"
+                components={{ p: 'span' }}
             >
                 Why don't you report this issue to Apple?
             </MarkdownI18n>
@@ -47,7 +48,7 @@ const faqItems: FAQItem[] = [
                     <MarkdownI18n
                         id="landingPageFAQ.pricing.answer.markdown"
                     >
-                        Free + one-time purchase. It's free to download from the Mac App Store, and you can preview an unlimited number of static WebP files, as well as up to 10 animated WebP files per hour. This allows you to try the app and make sure it meets your needs. Once you unlock the full version with a one-time in-app purchase (priced about the cost of a cup of coffee ☕️), you can enjoy unlimited previews.
+                        **Free + one-time purchase.** It's free to download from the Mac App Store, and you can preview an unlimited number of static WebP files, as well as up to 10 animated WebP files per hour. This allows you to try the app and make sure it meets your needs. Once you unlock the full version with a one-time in-app purchase (priced about the cost of a cup of coffee ☕️), you can enjoy unlimited previews.
                     </MarkdownI18n>
                 </p>
             </div>
