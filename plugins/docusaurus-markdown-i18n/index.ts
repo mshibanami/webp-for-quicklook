@@ -7,19 +7,6 @@ export default function myCliPlugin(): Plugin {
         name: 'docusaurus-markdown-i18n',
 
         extendCli(cli: CommanderStatic) {
-            // cli
-            //     .command('hello')
-            //     .description('Say hello from a TypeScript Docusaurus plugin')
-            //     // Avoid using '--name' as it collides with commander.name() method
-            //     .option('--greet-name <name>', 'Name to greet', 'world')
-            //     .action(function (...args: any[]) {
-            //         // In commander v5, when there are no declared arguments,
-            //         // the first argument to the action is the command itself.
-            //         const commandInstance = args[0] as any;
-            //         const greetName = commandInstance?.greetName ?? 'world';
-            //         console.log(`Hello, ${greetName}!`);
-            //     });
-
             cli
                 .command('write-markdown-translations [siteDir]')
                 .description('Extract required translations of your site.')
@@ -38,6 +25,14 @@ export default function myCliPlugin(): Plugin {
                 .option(
                     '--messagePrefix <messagePrefix>',
                     'Allows to init new written messages with a given prefix. This might help you to highlight untranslated message by making them stand out in the UI (default: "")',
+                )
+                .option(
+                    '--tag-aliases <aliases...>',
+                    'Extra JSX tag names to treat as translate components (example: --tag-aliases MarkdownI18n MyTranslate). Can be used multiple times.',
+                )
+                .option(
+                    '--function-aliases <aliases...>',
+                    'Extra function names to treat as translate functions (example: --function-aliases myTranslate). Can be used multiple times.',
                 )
                 .action(writeMarkdownTranslations);
         },

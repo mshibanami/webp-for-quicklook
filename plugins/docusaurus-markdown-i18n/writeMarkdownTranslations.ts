@@ -25,6 +25,10 @@ export type WriteTranslationsCLIOptions = Pick<
     'config' | 'locale'
 > &
     WriteTranslationsOptions;
+export type WriteTranslationsCLIOptionsWithAliases = WriteTranslationsCLIOptions & {
+    tagAliases?: string[];
+    functionAliases?: string[];
+};
 
 function resolveThemeCommonLibDir(): string | undefined {
     try {
@@ -79,7 +83,7 @@ async function writePluginTranslationFiles({
 
 export async function writeMarkdownTranslations(
     siteDirParam: string = '.',
-    options: Partial<WriteTranslationsCLIOptions> = {},
+    options: Partial<WriteTranslationsCLIOptionsWithAliases> = {},
 ): Promise<void> {
     const siteDir = await fs.realpath(siteDirParam);
 
@@ -100,10 +104,18 @@ Available locales are: ${context.i18n.locales.join(',')}.`,
         );
     }
 
+    const aliasOptions = ((options as WriteTranslationsCLIOptionsWithAliases).tagAliases || (options as WriteTranslationsCLIOptionsWithAliases).functionAliases)
+        ? {
+            componentNames: (options as WriteTranslationsCLIOptionsWithAliases).tagAliases,
+            functionNames: (options as WriteTranslationsCLIOptionsWithAliases).functionAliases,
+        }
+        : undefined;
+
     const extractedCodeTranslations = await extractSiteSourceCodeTranslations({
         siteDir,
         plugins,
         extraSourceCodeFilePaths: await getExtraSourceCodeFilePaths(),
+        aliasOptions,
     });
 
     const defaultCodeMessages = await loadPluginsDefaultCodeTranslationMessages(

@@ -1,51 +1,47 @@
-import React from 'react';
-import { translate } from '@docusaurus/Translate';
+import React, { ReactNode } from 'react';
+import { translate, TranslateProps } from '@docusaurus/Translate';
 import ReactMarkdown from 'react-markdown';
 import Link from '@docusaurus/Link';
+import { ReactMarkdownOptions } from 'react-markdown/lib/react-markdown';
 
-export interface MarkdownI18nProps {
-    id: string;
-    message: string;
+export type MarkdownI18nProps = Omit<TranslateProps<string>, 'values'> & {
     values?: Record<string, string | number>;
-    className?: string;
     components?: Record<string, any>;
+    markdownOptions?: ReactMarkdownOptions;
 }
 
-export const MarkdownI18n: React.FC<MarkdownI18nProps> = ({
+export default function MarkdownI18n({
     id,
-    message,
     values,
-    className,
     components,
-}) => {
-    const markdown = translate({ id, message }, values);
+    children,
+    markdownOptions,
+}: MarkdownI18nProps): ReactNode {
+    const markdown = translate({ id, message: children }, values);
 
     return (
-        <div className={className}>
-            <ReactMarkdown
-                components={{
-                    a: ({ href, children, ...props }: any) => {
-                        if (!href) return <a {...props}>{children}</a>;
-                        // internal links -> Docusaurus Link
-                        if (href.startsWith('/') || href.startsWith('#') || href.startsWith('pathname://')) {
-                            const linkProps = props as React.ComponentProps<typeof Link>;
-                            return <Link to={href} {...linkProps}>{children}</Link>;
+        <ReactMarkdown
+            components={{
+                a: ({ href, children, ...props }: any) => {
+                    if (!href) return <a {...props}>{children}</a>;
+                    // internal links -> Docusaurus Link
+                    if (href.startsWith('/') || href.startsWith('#') || href.startsWith('pathname://')) {
+                        const linkProps = props as React.ComponentProps<typeof Link>;
+                        return <Link to={href} {...linkProps}>{children}</Link>;
 
-                        }
-                        // external link
-                        return (
-                            <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
-                                {children}
-                            </a>
-                        );
-                    },
-                    ...components,
-                }}
-            >
-                {markdown}
-            </ReactMarkdown>
-        </div>
+                    }
+                    // external link
+                    return (
+                        <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
+                            {children}
+                        </a>
+                    );
+                },
+                ...components,
+            }}
+            {...markdownOptions}
+        >
+            {markdown}
+        </ReactMarkdown>
     );
 };
-
-export default MarkdownI18n;

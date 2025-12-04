@@ -534,4 +534,58 @@ Full code: translate({
       ],
     });
   });
+
+  it('extracts component when configured as alias', async () => {
+    const {sourceCodeFilePath} = await createTmpSourceCodeFile({
+      extension: 'js',
+      content: `
+export default function MyComponent() {
+  return (
+    <div>
+      <MarkdownI18n id="aliasId">alias message</MarkdownI18n>
+    </div>
+  );
+}
+`,
+    });
+
+    const sourceCodeFileTranslations = await extractSourceCodeFileTranslations(
+      sourceCodeFilePath,
+      TestBabelOptions,
+      { componentNames: ['MarkdownI18n'] },
+    );
+
+    expect(sourceCodeFileTranslations).toEqual({
+      sourceCodeFilePath,
+      translations: {
+        aliasId: { message: 'alias message' },
+      },
+      warnings: [],
+    });
+  });
+
+  it('extracts function when configured as alias', async () => {
+    const {sourceCodeFilePath} = await createTmpSourceCodeFile({
+      extension: 'js',
+      content: `
+export default function MyComponent() {
+  return translate2({id: 'aliasFnId', message: 'alias fn message'});
+}
+`,
+    });
+
+    const sourceCodeFileTranslations = await extractSourceCodeFileTranslations(
+      sourceCodeFilePath,
+      TestBabelOptions,
+      { functionNames: ['translate2'] },
+    );
+
+    expect(sourceCodeFileTranslations).toEqual({
+      sourceCodeFilePath,
+      translations: {
+        aliasFnId: { message: 'alias fn message' },
+      },
+      warnings: [],
+    });
+  });
 });

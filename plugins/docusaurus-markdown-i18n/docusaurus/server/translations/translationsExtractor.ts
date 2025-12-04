@@ -12,6 +12,7 @@ import {
   getBabelOptions,
   getCustomBabelConfigFilePath,
   extractAllSourceCodeFileTranslations,
+  type ExtractorAliasOptions,
 } from '../../../docusaurus-babel';
 import type {
   InitializedPlugin,
@@ -59,10 +60,12 @@ export async function extractSiteSourceCodeTranslations({
   siteDir,
   plugins,
   extraSourceCodeFilePaths = [],
+  aliasOptions,
 }: {
   siteDir: string;
   plugins: InitializedPlugin[];
   extraSourceCodeFilePaths?: string[];
+  aliasOptions?: ExtractorAliasOptions;
 }): Promise<TranslationFileContent> {
   const babelOptions = getBabelOptions({
     isServer: true,
@@ -91,6 +94,7 @@ export async function extractSiteSourceCodeTranslations({
     await extractAllSourceCodeFileTranslations(
       allSourceCodeFilePaths,
       babelOptions,
+      aliasOptions,
     );
 
   logSourceCodeFileTranslationsWarnings(sourceCodeFilesTranslations);
