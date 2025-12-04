@@ -11,7 +11,8 @@
     "serve": "docusaurus serve",
     "write-translations": "bash scripts/docusaurus-write-translations.sh",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "typecheck": "tsc",
+    "typecheck": "tsc --noEmit",
+    "docusaurus": "docusaurus",
     "check-generated-json-translations": "bash scripts/check-generated-json-translations.sh"
   },
   "dependencies": {

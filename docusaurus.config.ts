@@ -4,6 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 import remarkGithubAdmonitionsToDirectives from "remark-github-admonitions-to-directives";
 import remarkCjkFriendly from 'remark-cjk-friendly';
 import { SUPPORTED_LOCALES, isSupportedLocale } from './src/constants';
+import MarkdownI18nPlugin from './plugins/docusaurus-markdown-i18n';
 
 const defaultLocale = 'en';
 const envLocale = process.env.DOCUSAURUS_CURRENT_LOCALE;
@@ -36,6 +37,7 @@ const config: Config = {
   plugins: [
     'docusaurus-plugin-sass',
     'docusaurus-plugin-image-zoom',
+    MarkdownI18nPlugin,
   ],
   markdown: {
     hooks: {
