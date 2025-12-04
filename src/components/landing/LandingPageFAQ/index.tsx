@@ -4,7 +4,6 @@ import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import MarkdownI18n from '../../MarkdownI18n';
 import styles from './styles.module.scss';
-import useBaseUrl from '@docusaurus/useBaseUrl';
 
 interface FAQItem {
     question: ReactNode;
