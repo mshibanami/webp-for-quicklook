@@ -26,7 +26,7 @@ const faqItems: FAQItem[] = [
                 <p>
                     <MarkdownI18n
                         id="landingPageFAQ.whyNotReport.answer.markdown"
-                        values={{ videoLink: useBaseUrl("/videos/before-tahoe.mov") }}
+                        values={{ videoLink: "videos/before-tahoe.mov" }}
                     >
                         {'We reported this to Apple in 2024, and they did improve it! ([It was actually much worse before macOS Tahoe.]({videoLink})) However, even with those improvements, high-frame-rate WebP files are still capped as shown in the comparison video. In addition, it also remains a major problem for users on older macOS versions. That’s why we created this app for people who need it.'}
                     </MarkdownI18n>
