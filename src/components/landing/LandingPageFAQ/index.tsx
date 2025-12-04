@@ -2,50 +2,54 @@ import type { ReactNode } from 'react';
 import { useState } from 'react';
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
-import Translate, { translate } from '@docusaurus/Translate';
-import Link from '@docusaurus/Link';
+import MarkdownI18n from '../../MarkdownI18n';
 import styles from './styles.module.scss';
 
 interface FAQItem {
-    question: string;
+    question: ReactNode;
     answer: ReactNode;
 }
 
 const faqItems: FAQItem[] = [
     {
-        question: translate({
-            id: 'landingPageFAQ.whyNotReport.question',
-            message: 'Why don\'t you report this issue to Apple?',
-            description: 'FAQ question about why the issue is not reported to Apple'
-        }),
+        question: (
+            <MarkdownI18n
+                id="landingPageFAQ.whyNotReport.question.markdown"
+                message="Why don't you report this issue to Apple?"
+                components={{ p: 'span' }}
+            />
+        ),
         answer: (
             <div>
                 <p>
-                    <Translate
-                        id="landingPageFAQ.whyNotReport.answer"
-                        description="FAQ answer about why the issue is not reported to Apple"
-                    >
-                        {'We reported this to Apple in 2024, and they did improve it! (It was actually much worse before macOS Tahoe.) However, even with those improvements, high-frame-rate WebP files are still capped as shown in the comparison video. In addition, it also remains a major problem for users on older macOS versions. That’s why we created this app for people who need it.'}
-                    </Translate>
+                    <MarkdownI18n
+                        id="landingPageFAQ.whyNotReport.answer.markdown"
+                        message={
+                            'We reported this to Apple in 2024, and they did improve it! ([It was actually much worse before macOS Tahoe.]({videoLink})) However, even with those improvements, high-frame-rate WebP files are still capped as shown in the comparison video. In addition, it also remains a major problem for users on older macOS versions. That’s why we created this app for people who need it.'
+                        }
+                        values={{ videoLink: "/videos/before-tahoe.mov" }}
+                    />
                 </p>
             </div>
         )
     },
     {
-        question: translate({
-            id: 'landingPageFAQ.pricing.question',
-            message: 'What is the pricing model?',
-            description: 'FAQ question about pricing model'
-        }),
+        question: (
+            <MarkdownI18n
+                id="landingPageFAQ.pricing.question.markdown"
+                message="What is the pricing model?"
+                components={{ p: 'span' }}
+            />
+        ),
         answer: (
             <div>
                 <p>
-                    <Translate
-                        id="landingPageFAQ.pricing.answer"
-                        description="FAQ answer about pricing model"
-                    >
-                        {"Free + one-time purchase. It's free to download from the Mac App Store, and you can preview an unlimited number of static WebP files, as well as up to 10 animated WebP files per hour. This allows you to try the app and make sure it meets your needs. Once you unlock the full version with a one-time in-app purchase (priced about the cost of a cup of coffee ☕️), you can enjoy unlimited previews."}
-                    </Translate>
+                    <MarkdownI18n
+                        id="landingPageFAQ.pricing.answer.markdown"
+                        message={
+                            "Free + one-time purchase. It's free to download from the Mac App Store, and you can preview an unlimited number of static WebP files, as well as up to 10 animated WebP files per hour. This allows you to try the app and make sure it meets your needs. Once you unlock the full version with a one-time in-app purchase (priced about the cost of a cup of coffee ☕️), you can enjoy unlimited previews."
+                        }
+                    />
                 </p>
             </div>
         )
@@ -107,11 +111,11 @@ export default function LandingPageFAQ(): ReactNode {
         <div className={clsx('container', styles.faqSection)}>
             <div className={styles.faqHeader}>
                 <Heading as="h2">
-                    <Translate
-                        id="landingPageFAQ.title"
-                        description="FAQ section title">
-                        Frequently Asked Questions
-                    </Translate>
+                    <MarkdownI18n
+                        id="landingPageFAQ.title.markdown"
+                        message="Frequently Asked Questions"
+                        components={{ p: 'span' }}
+                    />
                 </Heading>
             </div>
             <div className={styles.faqContainer}>

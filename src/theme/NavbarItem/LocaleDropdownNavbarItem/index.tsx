@@ -2,6 +2,7 @@ import React, {type ReactNode} from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import {useAlternatePageUtils} from '@docusaurus/theme-common/internal';
 import {translate} from '@docusaurus/Translate';
+import MarkdownI18n from '@site/src/components/MarkdownI18n';
 import {useLocation} from '@docusaurus/router';
 import DropdownNavbarItem from '@theme/NavbarItem/DropdownNavbarItem';
 import IconLanguage from '@theme/Icon/Language';
@@ -53,11 +54,12 @@ export default function LocaleDropdownNavbarItem({
 
   // Mobile is handled a bit differently
   const dropdownLabel = mobile
-    ? translate({
-        message: 'Languages',
-        id: 'theme.navbar.mobileLanguageDropdown.label',
-        description: 'The label for the mobile language switcher dropdown',
-      })
+    ? (
+        <MarkdownI18n
+          id="theme.navbar.mobileLanguageDropdown.label.markdown"
+          message="Languages"
+        />
+      )
     : localeConfigs[currentLocale]!.label;
 
   return (

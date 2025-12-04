@@ -1,4 +1,4 @@
-import Translate, { translate } from "@docusaurus/Translate";
+import MarkdownI18n from '../../MarkdownI18n';
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import Heading from '@theme/Heading';
 
@@ -7,18 +7,17 @@ export default function LandingMotivation() {
         <section className={'sectionContainer'}>
             <div>
                 <Heading as="h2">
-                    <Translate
-                        id="landingPage.motivationTitle"
-                        description="Motivation section title">
-                        What's wrong with default Quick Look?
-                    </Translate>
+                    <MarkdownI18n
+                        id="landingPage.motivationTitle.markdown"
+                        message="What's wrong with default Quick Look?"
+                        components={{ p: 'span' }}
+                    />
                 </Heading>
                 <p>
-                    <Translate
-                        id="landingPage.motivationText"
-                        description="Motivation section text">
-                        While Quick Look does support animated WebP natively, it may not play animated WebP files smoothly. For example, 60FPS animated WebP files may be played at ~20FPS. Download the following WebP file to test it on your Mac:
-                    </Translate>
+                    <MarkdownI18n
+                        id="landingPage.motivationText.markdown"
+                        message={"While Quick Look does support animated WebP natively, it may not play animated WebP files smoothly. For example, 60FPS animated WebP files may be played at ~20FPS. Download the following WebP file to test it on your Mac:"}
+                    />
                 </p>
                 <ul>
                     <li>
@@ -43,11 +42,10 @@ export default function LandingMotivation() {
                     </li>
                 </ul>
                 <p>
-                    <Translate
-                        id="landingPage.motivationSuggestionText"
-                        description="Motivation section suggestion text">
-                        (We suggest using a Chromium-based browser (e.g., Google Chrome, Microsoft Edge) to check the original speed since their built-in WebP renderers work great.)
-                    </Translate>
+                    <MarkdownI18n
+                        id="landingPage.motivationSuggestionText.markdown"
+                        message={"(We suggest using a Chromium-based browser (e.g., Google Chrome, Microsoft Edge) to check the original speed since their built-in WebP renderers work great.)"}
+                    />
                 </p>
             </div>
         </section>
