@@ -15,20 +15,19 @@ const faqItems: FAQItem[] = [
         question: (
             <MarkdownI18n
                 id="landingPageFAQ.whyNotReport.question.markdown"
-                message="Why don't you report this issue to Apple?"
-                components={{ p: 'span' }}
-            />
+            >
+                Why don't you report this issue to Apple?
+            </MarkdownI18n>
         ),
         answer: (
             <div>
                 <p>
                     <MarkdownI18n
                         id="landingPageFAQ.whyNotReport.answer.markdown"
-                        message={
-                            'We reported this to Apple in 2024, and they did improve it! ([It was actually much worse before macOS Tahoe.]({videoLink})) However, even with those improvements, high-frame-rate WebP files are still capped as shown in the comparison video. In addition, it also remains a major problem for users on older macOS versions. That’s why we created this app for people who need it.'
-                        }
                         values={{ videoLink: "/videos/before-tahoe.mov" }}
-                    />
+                    >
+                        {'We reported this to Apple in 2024, and they did improve it! ([It was actually much worse before macOS Tahoe.]({videoLink})) However, even with those improvements, high-frame-rate WebP files are still capped as shown in the comparison video. In addition, it also remains a major problem for users on older macOS versions. That’s why we created this app for people who need it.'}
+                    </MarkdownI18n>
                 </p>
             </div>
         )
@@ -37,19 +36,19 @@ const faqItems: FAQItem[] = [
         question: (
             <MarkdownI18n
                 id="landingPageFAQ.pricing.question.markdown"
-                message="What is the pricing model?"
                 components={{ p: 'span' }}
-            />
+            >
+                What is the pricing model?
+            </MarkdownI18n>
         ),
         answer: (
             <div>
                 <p>
                     <MarkdownI18n
                         id="landingPageFAQ.pricing.answer.markdown"
-                        message={
-                            "Free + one-time purchase. It's free to download from the Mac App Store, and you can preview an unlimited number of static WebP files, as well as up to 10 animated WebP files per hour. This allows you to try the app and make sure it meets your needs. Once you unlock the full version with a one-time in-app purchase (priced about the cost of a cup of coffee ☕️), you can enjoy unlimited previews."
-                        }
-                    />
+                    >
+                        Free + one-time purchase. It's free to download from the Mac App Store, and you can preview an unlimited number of static WebP files, as well as up to 10 animated WebP files per hour. This allows you to try the app and make sure it meets your needs. Once you unlock the full version with a one-time in-app purchase (priced about the cost of a cup of coffee ☕️), you can enjoy unlimited previews.
+                    </MarkdownI18n>
                 </p>
             </div>
         )
@@ -113,9 +112,10 @@ export default function LandingPageFAQ(): ReactNode {
                 <Heading as="h2">
                     <MarkdownI18n
                         id="landingPageFAQ.title.markdown"
-                        message="Frequently Asked Questions"
                         components={{ p: 'span' }}
-                    />
+                    >
+                        Frequently Asked Questions
+                    </MarkdownI18n>
                 </Heading>
             </div>
             <div className={styles.faqContainer}>

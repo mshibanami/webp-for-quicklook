@@ -9,7 +9,9 @@ function RssLink() {
     return (
         <Link href="pathname:///release-notes/rss.xml" className={styles.rss}>
             <b>
-                <MarkdownI18n id="release-notes.description.rssLink.markdown" message="RSS feeds" />
+                <MarkdownI18n id="release-notes.description.rssLink.markdown">
+                    RSS feeds
+                </MarkdownI18n>
             </b>
             <svg
                 style={{

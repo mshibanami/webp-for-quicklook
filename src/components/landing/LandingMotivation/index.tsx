@@ -9,15 +9,17 @@ export default function LandingMotivation() {
                 <Heading as="h2">
                     <MarkdownI18n
                         id="landingPage.motivationTitle.markdown"
-                        message="What's wrong with default Quick Look?"
                         components={{ p: 'span' }}
-                    />
+                    >
+                        {"What's wrong with default Quick Look?"}
+                    </MarkdownI18n>
                 </Heading>
                 <p>
                     <MarkdownI18n
                         id="landingPage.motivationText.markdown"
-                        message={"While Quick Look does support animated WebP natively, it may not play animated WebP files smoothly. For example, 60FPS animated WebP files may be played at ~20FPS. Download the following WebP file to test it on your Mac:"}
-                    />
+                    >
+                        {"While Quick Look does support animated WebP natively, it may not play animated WebP files smoothly. For example, 60FPS animated WebP files may be played at ~20FPS. Download the following WebP file to test it on your Mac:"}
+                    </MarkdownI18n>
                 </p>
                 <ul>
                     <li>
@@ -44,8 +46,9 @@ export default function LandingMotivation() {
                 <p>
                     <MarkdownI18n
                         id="landingPage.motivationSuggestionText.markdown"
-                        message={"(We suggest using a Chromium-based browser (e.g., Google Chrome, Microsoft Edge) to check the original speed since their built-in WebP renderers work great.)"}
-                    />
+                    >
+                        {"(We suggest using a Chromium-based browser (e.g., Google Chrome, Microsoft Edge) to check the original speed since their built-in WebP renderers work great.)"}
+                    </MarkdownI18n>
                 </p>
             </div>
         </section>
