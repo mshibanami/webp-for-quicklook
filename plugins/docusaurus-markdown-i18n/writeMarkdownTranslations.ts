@@ -104,12 +104,15 @@ Available locales are: ${context.i18n.locales.join(',')}.`,
         );
     }
 
-    const aliasOptions = ((options as WriteTranslationsCLIOptionsWithAliases).tagAliases || (options as WriteTranslationsCLIOptionsWithAliases).functionAliases)
-        ? {
-            componentNames: (options as WriteTranslationsCLIOptionsWithAliases).tagAliases,
-            functionNames: (options as WriteTranslationsCLIOptionsWithAliases).functionAliases,
-        }
-        : undefined;
+    const inputTagAliases = (options as WriteTranslationsCLIOptionsWithAliases).tagAliases;
+    const inputFunctionAliases = (options as WriteTranslationsCLIOptionsWithAliases).functionAliases;
+
+    // The CLI option parsers sometimes return a single string for single args.
+    // Normalize to an array here so the extractor always receives string[].
+    const aliasOptions = inputTagAliases || inputFunctionAliases ? {
+        componentNames: Array.isArray(inputTagAliases) ? inputTagAliases : inputTagAliases ? [inputTagAliases] : [],
+        functionNames: Array.isArray(inputFunctionAliases) ? inputFunctionAliases : inputFunctionAliases ? [inputFunctionAliases] : [],
+    } : undefined;
 
     const extractedCodeTranslations = await extractSiteSourceCodeTranslations({
         siteDir,

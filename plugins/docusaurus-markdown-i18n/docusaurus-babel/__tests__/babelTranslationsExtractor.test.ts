@@ -588,4 +588,159 @@ export default function MyComponent() {
       warnings: [],
     });
   });
+
+  it('does not warn for intrinsic HTML tags like <a> when tag alias is configured elsewhere', async () => {
+    const {sourceCodeFilePath} = await createTmpSourceCodeFile({
+      extension: 'js',
+      content: `
+import {translate} from '@docusaurus/Translate';
+
+const DefaultLabel = translate({message: 'Skip to main content', id: 'theme.common.skipToMainContent'});
+
+export default function Component() {
+  return (
+    <div>
+      <a href="#">{DefaultLabel}</a>
+    </div>
+  );
+}
+`,
+    });
+
+    const sourceCodeFileTranslations = await extractSourceCodeFileTranslations(
+      sourceCodeFilePath,
+      TestBabelOptions,
+      { componentNames: ['MarkdownI18n'] },
+    );
+
+    expect(sourceCodeFileTranslations).toEqual({
+      sourceCodeFilePath,
+      translations: {},
+      warnings: [],
+    });
+  });
+
+  it('does not warn for intrinsic HTML tags like <a> when tag alias is configured elsewhere (alias passed as string)', async () => {
+    const {sourceCodeFilePath} = await createTmpSourceCodeFile({
+      extension: 'js',
+      content: `
+import {translate} from '@docusaurus/Translate';
+
+const DefaultLabel = translate({message: 'Skip to main content', id: 'theme.common.skipToMainContent'});
+
+export default function Component() {
+  return (
+    <div>
+      <a href="#">{DefaultLabel}</a>
+    </div>
+  );
+}
+`,
+    });
+
+    const sourceCodeFileTranslations = await extractSourceCodeFileTranslations(
+      sourceCodeFilePath,
+      TestBabelOptions,
+      // Pass the alias as string to simulate CLI behavior
+      { componentNames: 'MarkdownI18n' as unknown as string[] },
+    );
+
+    expect(sourceCodeFileTranslations).toEqual({
+      sourceCodeFilePath,
+      translations: {},
+      warnings: [],
+    });
+  });
+
+  it('does not warn for intrinsic HTML tags with nested JSX children when tag alias is configured elsewhere', async () => {
+    const {sourceCodeFilePath} = await createTmpSourceCodeFile({
+      extension: 'tsx',
+      content: `
+import {translate} from '@docusaurus/Translate';
+
+const DefaultLabel = translate({message: 'Skip to main content', id: 'theme.common.skipToMainContent'});
+
+function Image() { return <img src="/img/foo.png" />; }
+
+export default function Component() {
+  return (
+    <div>
+      <a href="#"><Image /></a>
+    </div>
+  );
+}
+`,
+    });
+
+    const sourceCodeFileTranslations = await extractSourceCodeFileTranslations(
+      sourceCodeFilePath,
+      TestBabelOptions,
+      { componentNames: ['MarkdownI18n'] },
+    );
+
+    expect(sourceCodeFileTranslations).toEqual({
+      sourceCodeFilePath,
+      translations: {},
+      warnings: [],
+    });
+  });
+
+  it('honors an explicit lowercase tag alias like <a>', async () => {
+    const {sourceCodeFilePath} = await createTmpSourceCodeFile({
+      extension: 'js',
+      content: `
+export default function MyComponent() {
+  return (
+    <div>
+      <a id="aliasId">alias message</a>
+    </div>
+  );
+}
+`,
+    });
+
+    const sourceCodeFileTranslations = await extractSourceCodeFileTranslations(
+      sourceCodeFilePath,
+      TestBabelOptions,
+      { componentNames: ['a'] },
+    );
+
+    expect(sourceCodeFileTranslations).toEqual({
+      sourceCodeFilePath,
+      translations: {
+        aliasId: { message: 'alias message' },
+      },
+      warnings: [],
+    });
+  });
+
+  it('honors an explicit lowercase tag alias like <a> when alias passed as string', async () => {
+    const {sourceCodeFilePath} = await createTmpSourceCodeFile({
+      extension: 'js',
+      content: `
+export default function MyComponent() {
+  return (
+    <div>
+      <a id="aliasId">alias message</a>
+    </div>
+  );
+}
+`,
+    });
+
+    const sourceCodeFileTranslations = await extractSourceCodeFileTranslations(
+      sourceCodeFilePath,
+      TestBabelOptions,
+      // Alias passed as string
+      { componentNames: 'a' as unknown as string[] },
+    );
+
+    expect(sourceCodeFileTranslations).toEqual({
+      sourceCodeFilePath,
+      translations: {
+        aliasId: { message: 'alias message' },
+      },
+      warnings: [],
+    });
+  });
 });

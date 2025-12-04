@@ -87,11 +87,6 @@ function extractSourceCodeAstTranslations(
 Full code: ${generate(node).code}`;
   }
 
-  const isTranslatorAlias = ((): boolean => {
-    const sourceFileName = sourceCodeFilePath.split('/').pop()?.replace(/\.[^.]+$/, '') ?? '';
-    return aliasOptions?.componentNames.includes(sourceFileName) ?? false;
-  })();
-
   const translations: TranslationFileContent = {};
   const warnings: string[] = [];
   let translateComponentNames: string[] = [];
@@ -99,6 +94,11 @@ Full code: ${generate(node).code}`;
 
   const configuredComponentAliases = aliasOptions?.componentNames ?? [];
   const configuredFunctionAliases = aliasOptions?.functionNames ?? [];
+
+  const isTranslatorAlias = ((): boolean => {
+    const sourceFileName = sourceCodeFilePath.split('/').pop()?.replace(/\.[^.]+$/, '') ?? '';
+    return configuredComponentAliases.includes(sourceFileName);
+  })();
 
   // First pass: find import declarations of Translate / translate.
   // If not found, don't process the rest to avoid false positives
@@ -141,6 +141,16 @@ Full code: ${generate(node).code}`;
           return;
         }
         const openingName = (openingNamePath.node as t.JSXIdentifier).name;
+        // Ignore intrinsic HTML elements (like <a>, <div>, <span>) unless they were
+        // explicitly configured as an alias. This avoids false-positives where
+        // the extraction logic would run on, e.g., <a>{someNonStaticValue}</a>
+        // simply because the CLI provided tag aliases for other components.
+        const isLowercase = /^[a-z]/.test(openingName);
+        const isConfiguredAlias = configuredComponentAliases.includes(openingName);
+        if (isLowercase && !isConfiguredAlias) {
+          return;
+        }
+
         // If imported (translateComponentNames) or configured alias (configuredComponentAliases)
         if (
           !translateComponentNames.includes(openingName) &&
