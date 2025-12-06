@@ -1,4 +1,4 @@
-import MarkdownI18n from '../../MarkdownI18n';
+import { TranslatedMarkdown } from 'docusaurus-i18n-markup';
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import Heading from '@theme/Heading';
 
@@ -7,19 +7,19 @@ export default function LandingMotivation() {
         <section className={'sectionContainer'}>
             <div>
                 <Heading as="h2">
-                    <MarkdownI18n
+                    <TranslatedMarkdown
                         id="landingPage.motivationTitle.markdown"
                         components={{ p: 'span' }}
                     >
                         {"What's wrong with default Quick Look?"}
-                    </MarkdownI18n>
+                    </TranslatedMarkdown>
                 </Heading>
                 <p>
-                    <MarkdownI18n
+                    <TranslatedMarkdown
                         id="landingPage.motivationText.markdown"
                     >
                         {"While Quick Look does support animated WebP natively, it may not play animated WebP files smoothly. For example, 60 fps animated WebP files may be played at ~20 fps. Download the following WebP file to test it on your Mac:"}
-                    </MarkdownI18n>
+                    </TranslatedMarkdown>
                 </p>
                 <ul>
                     <li>
@@ -44,11 +44,11 @@ export default function LandingMotivation() {
                     </li>
                 </ul>
                 <p>
-                    <MarkdownI18n
+                    <TranslatedMarkdown
                         id="landingPage.motivationSuggestionText.markdown"
                     >
                         {"(We suggest using a Chromium-based browser (e.g., Google Chrome, Microsoft Edge) to check the original speed since their built-in WebP renderers work great.)"}
-                    </MarkdownI18n>
+                    </TranslatedMarkdown>
                 </p>
             </div>
         </section>

@@ -2,7 +2,7 @@
 
 cd "$(dirname "$0")/.."
 
-pnpm run docusaurus write-markdown-translations --tag-aliases MarkdownI18n --override
+pnpm run docusaurus write-translations-plus --override
 
 declare -a ignored_code_json_patterns=(
   "^theme\\\\."

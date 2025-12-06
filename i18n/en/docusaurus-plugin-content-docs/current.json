@@ -1,1 +1,14 @@
-{}
+{
+  "sidebar.sidebar.category.Help": {
+    "message": "Help",
+    "description": "The label for category 'Help' in sidebar 'sidebar'"
+  },
+  "sidebar.sidebar.category.Misc.": {
+    "message": "Misc.",
+    "description": "The label for category 'Misc.' in sidebar 'sidebar'"
+  },
+  "sidebar.sidebar.link.Release Notes": {
+    "message": "Release Notes",
+    "description": "The label for link 'Release Notes' in sidebar 'sidebar', linking to '/release-notes'"
+  }
+}

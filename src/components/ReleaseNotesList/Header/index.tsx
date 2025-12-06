@@ -1,6 +1,6 @@
 import React, { type ReactNode } from 'react';
 import Translate from '@docusaurus/Translate';
-import MarkdownI18n from '../../MarkdownI18n';
+import { TranslatedMarkdown } from 'docusaurus-i18n-markup';
 import Link from '@docusaurus/Link';
 import Heading from '@theme/Heading';
 import styles from './styles.module.scss';
@@ -9,9 +9,9 @@ function RssLink() {
     return (
         <Link href="pathname:///release-notes/rss.xml" className={styles.rss}>
             <b>
-                <MarkdownI18n id="release-notes.description.rssLink.markdown">
+                <TranslatedMarkdown id="release-notes.description.rssLink.markdown">
                     RSS feeds
-                </MarkdownI18n>
+                </TranslatedMarkdown>
             </b>
             <svg
                 style={{

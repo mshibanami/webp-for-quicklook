@@ -4,7 +4,6 @@ import clsx from 'clsx';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
-import Heading from '@theme/Heading';
 import LandingPageBackground from '@site/src/components/landing/LandingPageBackground';
 import styles from './index.module.scss';
 import Translate, { translate } from '@docusaurus/Translate';

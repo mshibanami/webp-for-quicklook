@@ -35,12 +35,18 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      docusaurus-i18n-markup:
+        specifier: ^0.0.1
+        version: 0.0.1(@docusaurus/core@3.9.2(@mdx-js/react@3.1.1(@types/react@19.2.7)(react@19.2.1))(react-dom@19.2.1(react@19.2.1))(react@19.2.1)(typescript@5.9.3))(react-dom@19.2.1(react@19.2.1))(react-markdown@8.0.7(@types/react@19.2.7)(react@19.2.1))(react@19.2.1)
       docusaurus-plugin-image-zoom:
         specifier: ^3.0.1
         version: 3.0.1(@docusaurus/theme-classic@3.9.2(@types/react@19.2.7)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)(typescript@5.9.3))
       docusaurus-plugin-sass:
         specifier: ^0.2.6
         version: 0.2.6(@docusaurus/core@3.9.2(@mdx-js/react@3.1.1(@types/react@19.2.7)(react@19.2.1))(react-dom@19.2.1(react@19.2.1))(react@19.2.1)(typescript@5.9.3))(sass@1.94.2)(webpack@5.103.0)
+      docusaurus-plugin-write-translations-plus:
+        specifier: ^0.0.1
+        version: 0.0.1(@docusaurus/core@3.9.2(@mdx-js/react@3.1.1(@types/react@19.2.7)(react@19.2.1))(react-dom@19.2.1(react@19.2.1))(react@19.2.1)(typescript@5.9.3))
       fast-glob:
         specifier: ^3.3.3
         version: 3.3.3
@@ -78,15 +84,6 @@ importers:
       '@babel/core':
         specifier: ^7.28.5
         version: 7.28.5
-      '@babel/generator':
-        specifier: ^7.28.5
-        version: 7.28.5
-      '@babel/traverse':
-        specifier: ^7.28.5
-        version: 7.28.5
-      '@docusaurus/logger':
-        specifier: ^3.9.2
-        version: 3.9.2
       '@docusaurus/module-type-aliases':
         specifier: ^3.9.2
         version: 3.9.2(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
@@ -99,18 +96,6 @@ importers:
       '@docusaurus/types':
         specifier: ^3.9.2
         version: 3.9.2(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
-      '@docusaurus/utils':
-        specifier: ^3.9.2
-        version: 3.9.2(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
-      '@types/babel__core':
-        specifier: ^7.20.5
-        version: 7.20.5
-      '@types/babel__generator':
-        specifier: ^7.27.0
-        version: 7.27.0
-      '@types/babel__traverse':
-        specifier: ^7.28.0
-        version: 7.28.0
       '@types/fs-extra':
         specifier: ^11.0.4
         version: 11.0.4
@@ -129,9 +114,6 @@ importers:
       cmd-ts:
         specifier: ^0.14.3
         version: 0.14.3
-      commander:
-        specifier: ^5.1.0
-        version: 5.1.0
       husky:
         specifier: ^9.1.7
         version: 9.1.7
@@ -1809,18 +1791,6 @@ packages:
   '@tweenjs/tween.js@23.1.3':
     resolution: {integrity: sha512-vJmvvwFxYuGnF2axRtPYocag6Clbb5YS7kLL+SO/TeVFzHqDIWrNKYtcsPMibjDx9O+bu+psAy9NKfWklassUA==}
 
-  '@types/babel__core@7.20.5':
-    resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
-
-  '@types/babel__generator@7.27.0':
-    resolution: {integrity: sha512-ufFd2Xi92OAVPYsy+P4n7/U7e68fex0+Ee8gSG9KX7eo084CWiQ4sdxktvdl0bOPupXtVJPY19zk6EwWqUQ8lg==}
-
-  '@types/babel__template@7.4.4':
-    resolution: {integrity: sha512-h/NUaSyG5EyxBIp8YRxo4RMe2/qQgvyowRwVMzhYhBCONbW8PUsg4lkFMrhgZhUe5z3L3MiLDuvyJ/CaPa2A8A==}
-
-  '@types/babel__traverse@7.28.0':
-    resolution: {integrity: sha512-8PvcXf70gTDZBgt9ptxJ8elBeBjcLOAcOtoO/mPJjtji1+CdGbHgm77om1GrsPxsiE+uXIpNSK64UYaIwQXd4Q==}
-
   '@types/body-parser@1.19.6':
     resolution: {integrity: sha512-HLFeCYgz89uk22N5Qg3dvGvsv46B8GLvKKo1zKG4NybA8U2DiEO3w9lqGg29t/tfLRJpJ6iQxnVw4OnB7MoM9g==}
 
@@ -2774,6 +2744,14 @@ packages:
     resolution: {integrity: sha512-l4gcSouhcgIKRvyy99RNVOgxXiicE+2jZoNmaNmZ6JXiGajBOJAesk1OBlJuM5k2c+eudGdLxDqXuPCKIj6kpw==}
     engines: {node: '>=6'}
 
+  docusaurus-i18n-markup@0.0.1:
+    resolution: {integrity: sha512-Wrh44ZaTHbFB1veqr49+fo75ZUWnlSzzcext5516gTbB/XX1Bq+X6qWBqXVMSdsDdJ8DHsYKnqPQuXz9QZfnkQ==}
+    peerDependencies:
+      '@docusaurus/core': 2.x || 3.x
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+      react-markdown: ^9.0.0 || ^10.0.0
+
   docusaurus-plugin-image-zoom@3.0.1:
     resolution: {integrity: sha512-mQrqA99VpoMQJNbi02qkWAMVNC4+kwc6zLLMNzraHAJlwn+HrlUmZSEDcTwgn+H4herYNxHKxveE2WsYy73eGw==}
     peerDependencies:
@@ -2784,6 +2762,11 @@ packages:
     peerDependencies:
       '@docusaurus/core': ^2.0.0-beta || ^3.0.0-alpha
       sass: ^1.30.0
+
+  docusaurus-plugin-write-translations-plus@0.0.1:
+    resolution: {integrity: sha512-WxrtgPv2kN3m9s8BIDZ9IJ9CxstyjtnI+Nb/h7aHZMnTnsuM3JQSDjlzFedonp+ws6aGi3aBxJierDD3+Yg/lw==}
+    peerDependencies:
+      '@docusaurus/core': 2.x || 3.x
 
   dom-converter@0.2.0:
     resolution: {integrity: sha512-gd3ypIPfOMr9h5jIKq8E3sHOTCjeirnl0WK5ZdS1AW0Odt0b1PaWaHdJ4Qk4klv+YB9aJBS7mESXjFoDQPu6DA==}
@@ -8172,27 +8155,6 @@ snapshots:
 
   '@tweenjs/tween.js@23.1.3': {}
 
-  '@types/babel__core@7.20.5':
-    dependencies:
-      '@babel/parser': 7.28.5
-      '@babel/types': 7.28.5
-      '@types/babel__generator': 7.27.0
-      '@types/babel__template': 7.4.4
-      '@types/babel__traverse': 7.28.0
-
-  '@types/babel__generator@7.27.0':
-    dependencies:
-      '@babel/types': 7.28.5
-
-  '@types/babel__template@7.4.4':
-    dependencies:
-      '@babel/parser': 7.28.5
-      '@babel/types': 7.28.5
-
-  '@types/babel__traverse@7.28.0':
-    dependencies:
-      '@babel/types': 7.28.5
-
   '@types/body-parser@1.19.6':
     dependencies:
       '@types/connect': 3.4.38
@@ -9238,6 +9200,13 @@ snapshots:
     dependencies:
       '@leichtgewicht/ip-codec': 2.0.5
 
+  docusaurus-i18n-markup@0.0.1(@docusaurus/core@3.9.2(@mdx-js/react@3.1.1(@types/react@19.2.7)(react@19.2.1))(react-dom@19.2.1(react@19.2.1))(react@19.2.1)(typescript@5.9.3))(react-dom@19.2.1(react@19.2.1))(react-markdown@8.0.7(@types/react@19.2.7)(react@19.2.1))(react@19.2.1):
+    dependencies:
+      '@docusaurus/core': 3.9.2(@mdx-js/react@3.1.1(@types/react@19.2.7)(react@19.2.1))(react-dom@19.2.1(react@19.2.1))(react@19.2.1)(typescript@5.9.3)
+      react: 19.2.1
+      react-dom: 19.2.1(react@19.2.1)
+      react-markdown: 8.0.7(@types/react@19.2.7)(react@19.2.1)
+
   docusaurus-plugin-image-zoom@3.0.1(@docusaurus/theme-classic@3.9.2(@types/react@19.2.7)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)(typescript@5.9.3)):
     dependencies:
       '@docusaurus/theme-classic': 3.9.2(@types/react@19.2.7)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)(typescript@5.9.3)
@@ -9254,6 +9223,10 @@ snapshots:
       - node-sass
       - sass-embedded
       - webpack
+
+  docusaurus-plugin-write-translations-plus@0.0.1(@docusaurus/core@3.9.2(@mdx-js/react@3.1.1(@types/react@19.2.7)(react@19.2.1))(react-dom@19.2.1(react@19.2.1))(react@19.2.1)(typescript@5.9.3)):
+    dependencies:
+      '@docusaurus/core': 3.9.2(@mdx-js/react@3.1.1(@types/react@19.2.7)(react@19.2.1))(react-dom@19.2.1(react@19.2.1))(react@19.2.1)(typescript@5.9.3)
 
   dom-converter@0.2.0:
     dependencies:

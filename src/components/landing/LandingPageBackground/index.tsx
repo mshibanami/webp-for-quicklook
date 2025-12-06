@@ -6,8 +6,8 @@ import fragmentShader from '!!raw-loader!./fragment-shader.glsl';
 import vertexShader from '!!raw-loader!./vertex-shader.glsl';
 
 function GradientMesh({ isDarkMode, onRenderStart }: { isDarkMode: boolean; onRenderStart: () => void }) {
-    const materialRef = useRef<ShaderMaterial>()
-    const meshRef = useRef<Mesh>(null)
+    const materialRef = useRef<ShaderMaterial | null>(null)
+    const meshRef = useRef<Mesh | null>(null)
     const hasStartedRef = useRef(false)
 
     const { size, viewport } = useThree()

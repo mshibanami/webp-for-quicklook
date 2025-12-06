@@ -1,1 +1,39 @@
-{}
+{
+  "landingPage.heroSubtitle": {
+    "message": "{appName} plays animated WebP files at real speed.",
+    "description": "Landing page hero subtitle"
+  },
+  "release-notes.description.rssLink.markdown": {
+    "message": "RSS feeds"
+  },
+  "release-notes.description.subscribe": {
+    "message": "Subscribe through {rssLink} to stay up-to-date with new releases!"
+  },
+  "release-notes.description.oldReleaseNotes": {
+    "message": "If you are looking for the release notes of 7.10.0 or earlier, please check the app page in the {appStoreName}."
+  },
+  "landingPage.motivationTitle.markdown": {
+    "message": "What's wrong with default Quick Look?"
+  },
+  "landingPage.motivationText.markdown": {
+    "message": "While Quick Look does support animated WebP natively, it may not play animated WebP files smoothly. For example, 60 fps animated WebP files may be played at ~20 fps. Download the following WebP file to test it on your Mac:"
+  },
+  "landingPage.motivationSuggestionText.markdown": {
+    "message": "(We suggest using a Chromium-based browser (e.g., Google Chrome, Microsoft Edge) to check the original speed since their built-in WebP renderers work great.)"
+  },
+  "landingPageFAQ.whyNotReport.question.markdown": {
+    "message": "Why don't you report this issue to Apple?"
+  },
+  "landingPageFAQ.whyNotReport.answer.markdown": {
+    "message": "We reported this to Apple in 2024, and they did improve it! ([It was actually much worse before macOS Tahoe.]({videoLink})) However, even with those improvements, high-frame-rate WebP files are still capped as shown in the comparison video. In addition, it also remains a major problem for users on older macOS versions. That’s why we created this app for people who need it."
+  },
+  "landingPageFAQ.pricing.question.markdown": {
+    "message": "What is the pricing model?"
+  },
+  "landingPageFAQ.pricing.answer.markdown": {
+    "message": "**Free + one-time purchase.** It's free to download from the Mac App Store, and you can preview an unlimited number of static WebP files, as well as up to 10 animated WebP files per hour. This allows you to try the app and make sure it meets your needs. Once you unlock the full version with a one-time in-app purchase (priced about the cost of a cup of coffee ☕️), you can enjoy unlimited previews."
+  },
+  "landingPageFAQ.title.markdown": {
+    "message": "Frequently Asked Questions"
+  }
+}

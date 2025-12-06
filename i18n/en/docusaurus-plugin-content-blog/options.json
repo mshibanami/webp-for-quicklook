@@ -1,1 +1,14 @@
-{}
+{
+  "title": {
+    "message": "Release Notes",
+    "description": "The title for the blog used in SEO"
+  },
+  "description": {
+    "message": "Release notes for WebP for Quick Look.",
+    "description": "The description for the blog used in SEO"
+  },
+  "sidebar.title": {
+    "message": "Release Notes",
+    "description": "The label for the left sidebar"
+  }
+}
