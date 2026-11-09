@@ -1,6 +1,6 @@
 {
   "landingPage.heroSubtitle": {
-    "message": "{appName} plays animated WebP files at real speed.",
+    "message": "{appName} plays animated WebP and AVIF files at real speed.",
     "description": "Landing page hero subtitle"
   },
   "release-notes.description.rssLink.markdown": {
@@ -16,7 +16,7 @@
     "message": "What's wrong with default Quick Look?"
   },
   "landingPage.motivationText.markdown": {
-    "message": "While Quick Look does support animated WebP natively, it may not play animated WebP files smoothly. For example, 60 fps animated WebP files may be played at ~20 fps. Download the following WebP file to test it on your Mac:"
+    "message": "While Quick Look does support animated WebP and AVIF natively, it may not play them smoothly. For example, 60 fps animated WebP files may be played at ~20 fps. Download the following WebP files to test it on your Mac:"
   },
   "landingPage.motivationSuggestionText.markdown": {
     "message": "(We suggest using a Chromium-based browser (e.g., Google Chrome, Microsoft Edge) to check the original speed since their built-in WebP renderers work great.)"
@@ -31,7 +31,7 @@
     "message": "What is the pricing model?"
   },
   "landingPageFAQ.pricing.answer.markdown": {
-    "message": "**Free + one-time purchase.** It's free to download from the Mac App Store, and you can preview an unlimited number of static WebP files, as well as up to 10 animated WebP files per hour. This allows you to try the app and make sure it meets your needs. Once you unlock the full version with a one-time in-app purchase (priced about the cost of a cup of coffee ☕️), you can enjoy unlimited previews."
+    "message": "**Free + one-time purchase.** It's free to download from the Mac App Store, and you can preview an unlimited number of static WebP and AVIF files, as well as up to 10 animated WebP or AVIF files per hour. This allows you to try the app and make sure it meets your needs. Once you unlock the full version with a one-time in-app purchase (priced about the cost of a cup of coffee ☕️), you can enjoy unlimited previews."
   },
   "landingPageFAQ.title.markdown": {
     "message": "Frequently Asked Questions"

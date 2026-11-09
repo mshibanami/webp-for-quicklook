@@ -1,8 +1,8 @@
-# WebP for Quick Look - Browser Extension
+# WebP for Quick Look
 
-This is a repository for [the support website of WebP for Quick Look](https://mshibanami.github.io/webp-for-quicklook).
+This is a repository for [the support website of WebP for Quick Look](https://mshibanami.github.io/webp-for-quicklook), a Quick Look extension for macOS that previews still and animated WebP and AVIF images.
 
-Download the app and the extension from the following links:
+Download the app from the following link:
 
 <a href="https://apps.apple.com/app/id6755811088" target="_blank">
 <img src="./static/img/appstore-badge.svg" alt="Go to App Store" height="40">

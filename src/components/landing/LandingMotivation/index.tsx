@@ -18,7 +18,7 @@ export default function LandingMotivation() {
                     <TranslatedMarkdown
                         id="landingPage.motivationText.markdown"
                     >
-                        {"While Quick Look does support animated WebP natively, it may not play animated WebP files smoothly. For example, 60 fps animated WebP files may be played at ~20 fps. Download the following WebP file to test it on your Mac:"}
+                        {"While Quick Look does support animated WebP and AVIF natively, it may not play them smoothly. For example, 60 fps animated WebP files may be played at ~20 fps. Download the following WebP files to test it on your Mac:"}
                     </TranslatedMarkdown>
                 </p>
                 <ul>

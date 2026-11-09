@@ -212,6 +212,6 @@ export default config;
 function translatedTagline(locale): string {
   switch (locale) {
     default:
-      return 'Animated WebP, no speed cap.';
+      return 'Animated WebP & AVIF, no speed cap.';
   }
 }

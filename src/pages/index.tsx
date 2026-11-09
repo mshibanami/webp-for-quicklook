@@ -44,7 +44,7 @@ function LandingPageHero() {
                         description="Landing page hero subtitle"
                         values={{ appName: <b>WebP for Quick Look</b> }}
                     >
-                        {'{appName} is a Quick Look extension that enables smooth previews for animated WebP files.'}
+                        {'{appName} plays animated WebP and AVIF files at real speed.'}
                     </Translate>
                 </p>
             </div>
@@ -96,7 +96,7 @@ export default function Home(): ReactNode {
         {
             id: "landingPage.heroSubtitle",
             description: "Landing page hero subtitle",
-            message: '{appName} plays animated WebP files at real speed.',
+            message: '{appName} plays animated WebP and AVIF files at real speed.',
         },
         { appName }
     );
