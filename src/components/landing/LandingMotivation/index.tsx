@@ -24,7 +24,7 @@ export default function LandingMotivation() {
                 <ul>
                     <li>
                         <a
-                            href={useBaseUrl('/img/sample_60fps_cup.webp')}
+                            href={useBaseUrl('/img/sample_30fps_cup.webp')}
                             target="_blank"
                             rel="noreferrer">
                             <b>
