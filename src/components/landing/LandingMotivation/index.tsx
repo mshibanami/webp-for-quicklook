@@ -43,6 +43,28 @@ export default function LandingMotivation() {
                         </a>
                     </li>
                 </ul>
+                <ul>
+                    <li>
+                        <a
+                            href={useBaseUrl('/img/sample_30fps_cup.avif')}
+                            target="_blank"
+                            rel="noreferrer">
+                            <b>
+                                30 fps animated AVIF sample 1
+                            </b>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href={useBaseUrl('/img/sample_60fps_zelda.avif')}
+                            target="_blank"
+                            rel="noreferrer">
+                            <b>
+                                60 fps animated AVIF sample 2
+                            </b>
+                        </a>
+                    </li>
+                </ul>
                 <p>
                     <TranslatedMarkdown
                         id="landingPage.motivationSuggestionText.markdown"
